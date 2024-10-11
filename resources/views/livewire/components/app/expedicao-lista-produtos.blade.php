@@ -77,6 +77,7 @@
                 <small>Agendas: <b>{{$this->quantidadeAgenda}}</b></small> |
                 <small>Cadernos: <b>{{$this->quantidadeCaderno}}</b></small> |
                 <small>Caixas de Agendas: <b>{{$this->quantidadeCaixaAgenda}}</b></small> |
+                <small>Caixas de Cadernos: <b>{{$this->quantidadeCaixaCaderno}}</b></small>
             </h3>
         </ul>
     </div>

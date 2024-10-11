@@ -94,4 +94,15 @@ class ExpedicaoListaProdutos extends Component
         
         return ceil((intval($qtdAgendas)) / 30);
     }
+
+    public function getQuantidadeCaixaCadernoProperty()
+    {
+        $cadernos = array_filter($this->produtos, function ($p) {
+            return $p['tipo_produto'] == TipoProdutoEnum::CADERNO;
+        });
+        
+        $qtdCadernos = array_sum(array_column($cadernos, 'qtd_produto_individual'));
+        
+        return ceil((intval($qtdCadernos)) / 26);
+    }
 }
