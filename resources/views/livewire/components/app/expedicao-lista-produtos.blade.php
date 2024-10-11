@@ -26,8 +26,8 @@
                     />
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-2 ml-1">
-                    <button wire:click="add" type="button" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                        Adicionar
+                    <button type="button" wire:click="add" class="float-end mt-4 px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Adicionar Item
                     </button>
                 </div>
                 @if($errorMessage !== '')
