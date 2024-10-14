@@ -17,6 +17,20 @@
 </div>
 <div class="flex flex-wrap -mx-3 mb-2">
     <x-layouts.inputs.input-normal-text
+        label="Número da Expedição"
+        name="codigo"
+        lenght="5/12"
+        :value="$expedicao->codigo ?? old('codigo')"
+    />
+    <x-layouts.inputs.input-date
+        label="Data"
+        name="data"
+        lenght="5/12"
+        :value="$expedicao->data ?? old('data')"
+    />
+</div>
+<div class="flex flex-wrap -mx-3 mb-2">
+    <x-layouts.inputs.input-normal-text
         label="CEP"
         name="cep"
         lenght="5/12"
@@ -27,6 +41,20 @@
         name="endereco"
         lenght="5/12"
         :value="$expedicao->endereco ?? old('endereco')"
+    />
+</div>
+<div class="flex flex-wrap -mx-3 mb-2">
+    <x-layouts.inputs.input-normal-text
+        label="Número"
+        name="numero"
+        lenght="5/12"
+        :value="$expedicao->numero ?? old('numero')"
+    />
+    <x-layouts.inputs.input-normal-text
+        label="Embalador"
+        name="embalador"
+        lenght="5/12"
+        :value="$expedicao->embalador ?? old('embalador')"
     />
 </div>
 
