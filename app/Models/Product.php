@@ -19,4 +19,9 @@ class Product extends Model
         'edicao',
         'fornecedor_uuid',
     ];
+
+    public function fornecedor()
+    {
+        return $this->hasOne(Fornecedor::class, 'uuid', 'fornecedor_uuid');
+    }
 }

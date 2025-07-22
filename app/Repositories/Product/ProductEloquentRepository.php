@@ -15,10 +15,19 @@ class ProductEloquentRepository implements ProductRepositoryInterface
 
     public function paginate(int $page = 1, int $totalPerPage = 15, string $filter = null): PaginationInterface
     {
-        $query = $this->model->query();
+        $query = $this->model->query()->with(['fornecedor']);
+
+        // if (!is_null($filter)) {
+        //     $query->where("nome", "like", "%".$filter."%");
+        // }
 
         if (!is_null($filter)) {
-            $query->where("nome", "like", "%".$filter."%");
+            $query->where(function ($q) use ($filter) {
+                $q->where('nome_titulo', 'like', '%' . $filter . '%')
+                  ->orWhereHas('fornecedor', function ($q) use ($filter) {
+                      $q->where('nome_fantasia', 'like', '%' . $filter . '%');
+                  });
+            });
         }
 
         $query->orderBy('updated_at', 'desc');
