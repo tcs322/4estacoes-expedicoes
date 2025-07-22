@@ -8,12 +8,8 @@
 
 @include('components.alerts.form-errors')
 
-<form wire:submit.prevent="salvar">
-    @csrf
+@csrf
 
-    @livewire('components.app.product-item')
-
-    <button type="submit">Salvar Produto</button>
-</form>
-
+@livewire('components.app.product-item')
+    
 @endsection
