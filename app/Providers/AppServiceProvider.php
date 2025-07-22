@@ -12,6 +12,7 @@ use App\Models\LanceCliente;
 use App\Models\Leiloeiro;
 use App\Models\Pisteiro;
 use App\Models\PostoTrabalho;
+use App\Models\Product;
 use App\Models\Produto;
 use App\Models\Promotor;
 use App\Models\Raca;
@@ -27,6 +28,7 @@ use App\Observers\LanceObserver;
 use App\Observers\LeiloeiroObserver;
 use App\Observers\PisteiroObserver;
 use App\Observers\PostoTrabalhoObserver;
+use App\Observers\ProductObserver;
 use App\Observers\ProdutoObserver;
 use App\Observers\PromotorObserver;
 use App\Observers\RacaObserver;
@@ -60,6 +62,8 @@ use App\Repositories\PlanoPagamento\PlanoPagamentoEloquentRepository;
 use App\Repositories\PlanoPagamento\PlanoPagamentoRepositoryInterface;
 use App\Repositories\PostoTrabalho\PostoTrabalhoEloquentRepository;
 use App\Repositories\PostoTrabalho\PostoTrabalhoRepositoryInterface;
+use App\Repositories\Product\ProductEloquentRepository;
+use App\Repositories\Product\ProductRepositoryInterface;
 use App\Repositories\Produto\ProdutoEloquentRepository;
 use App\Repositories\Produto\ProdutoRepositoryInterface;
 use App\Repositories\Promotor\PromotorEloquentRepository;
@@ -143,6 +147,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             ExpedicaoRepositoryInterface::class, ExpedicaoEloquentRepository::class
         );
+        $this->app->bind(
+            ProductRepositoryInterface::class, ProductEloquentRepository::class
+        );
     }
 
 
@@ -166,6 +173,7 @@ class AppServiceProvider extends ServiceProvider
         Pisteiro::observe(PisteiroObserver::class);
         Promotor::observe(PromotorObserver::class);
         Produto::observe(ProdutoObserver::class);
+        Product::observe(ProductObserver::class);
 
         \DB::enableQueryLog();
         Validator::extend('validarIdadeAdmissao', function ($attribute, $value, $parameters, $validator) {

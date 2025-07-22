@@ -14,9 +14,9 @@ class FornecedorEloquentRepository implements FornecedorRepositoryInterface
         protected Fornecedor $model
     ){ }
 
-    public function all(array $filters): array
+    public function all()
     {
-        return $this->model->all()->toArray();
+        return $this->model->all();
     }
 
     public function totalQuantity() : int {

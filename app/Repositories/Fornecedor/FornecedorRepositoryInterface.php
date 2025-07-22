@@ -9,7 +9,7 @@ use App\Repositories\Interfaces\PaginationInterface;
 
 interface FornecedorRepositoryInterface
 {
-    public function all(array $filters): array;
+    public function all();
     public function totalQuantity() : int;
     public function paginate(int $page = 1, int $totalPerPage = 10, string $filter = null) : PaginationInterface;
     public function find(string $uuid): Fornecedor;

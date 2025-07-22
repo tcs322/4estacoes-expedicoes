@@ -12,6 +12,6 @@ class FornecedorSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Fornecedor::factory(120)->create();
+        \App\Models\Fornecedor::factory(10)->create();
     }
 }

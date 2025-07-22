@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
+            $table->uuid()->unique();
             $table->string("razao_social");
             $table->string("nome_fantasia");
             $table->string("documento");

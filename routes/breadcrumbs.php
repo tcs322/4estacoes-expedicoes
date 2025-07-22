@@ -203,3 +203,12 @@ Breadcrumbs::for('expedicao.create', function (BreadcrumbTrail $trail) {
     $trail->parent('expedicao');
     $trail->push('Nova Expedição', route('expedicao.create'));
 });
+
+Breadcrumbs::for('product', function (BreadcrumbTrail $trail) {
+    $trail->parent('Dashboard' , route('dashboard.index'));
+    $trail->push('Produto', route('product.index'));
+});
+Breadcrumbs::for('product.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('product');
+    $trail->push('Novo Produto', route('product.create'));
+});

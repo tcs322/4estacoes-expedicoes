@@ -13,9 +13,9 @@
                         $selected = "selected";
                      }
                  @endphp
-                    <option {{$selected}} value="{{ $cargo->uuid }}">{{ $cargo->nome ?? $cargo->descricao }}</option>
+                 <option {{ $selected }} value="{{ $cargo->uuid }}">{{ $cargo->{$labelKey} }}</option>
                 @else
-                    <option value="{{ $cargo->uuid }}">{{ $cargo->nome  ?? $cargo->descricao }}</option>
+                    <option value="{{ $cargo->uuid }}">{{ $cargo->{$labelKey} }}</option>
                 @endif
             @endforeach
         </select>

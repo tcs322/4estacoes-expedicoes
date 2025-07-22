@@ -33,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware(['web', 'auth.basic'])
+            Route::middleware(['web'])
                 ->group(base_path('routes/web.php'))
                 ->group(base_path('routes/app/cargo.php'))
                 ->group(base_path('routes/app/departamento.php'))
@@ -52,6 +52,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/app/pisteiro.php'))
                 ->group(base_path('routes/app/produto.php'))
                 ->group(base_path('routes/app/expedicao.php'))
+                // ->group(base_path('routes/app/product.php'))
                 ->group(base_path('routes/app/promotor.php'));
 
             Route::middleware('web')

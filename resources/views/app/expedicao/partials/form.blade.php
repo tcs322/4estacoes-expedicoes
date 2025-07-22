@@ -6,6 +6,7 @@
         label="Cliente"
         name="cliente_uuid"
         lenght="5/12"
+        labelKey="nome"
         :value="$expedicao->cliente_uuid ?? old('cliente_uuid')"
     />
     <x-layouts.inputs.input-normal-text
